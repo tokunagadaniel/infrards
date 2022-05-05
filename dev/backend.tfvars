@@ -1,3 +1,3 @@
 region = "sa-east-1"
 bucket = "ecs-infra-bucket"
-key    = "rds-cluster/dev/terraform.tfstate"
+key    = "ecs-fargate-cluster/dev/terraform.tfstate"
