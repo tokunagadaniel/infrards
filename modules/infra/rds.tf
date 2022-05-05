@@ -5,7 +5,7 @@ resource "aws_db_instance" "rds_instance" {
   engine = "mysql"
   engine_version = "8.0.27"
   instance_class = "db.t2.micro"
-  name = "test"
+  db_name = "test"
   username = "test"
   password = "test"
   publicly_accessible    = true
