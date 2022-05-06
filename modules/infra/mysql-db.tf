@@ -25,7 +25,7 @@ module "db" {
 
   # DB subnet group
   create_db_subnet_group = false
-  db_subnet_group_name   = "test"
+  db_subnet_group_name   = aws_db_subnet_group.db.name
 
   # DB Security group
   vpc_security_group_ids = [aws_security_group.db.id]
@@ -37,6 +37,14 @@ module "db" {
   # DB option group
   create_db_option_group = false
   option_group_name      = "default:mysql-5-7"
+}
+
+resource "aws_db_subnet_group" "db" {
+  subnet_ids = ["172.31.16.0/20", "172.31.0.0/20", "172.31.32.0/20"]
+
+  tags = {
+    Name = "Education"
+  }
 }
 
 resource "aws_security_group" "db" {
