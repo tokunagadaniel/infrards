@@ -25,7 +25,7 @@ module "db" {
 
   # DB subnet group
   create_db_subnet_group = false
-  db_subnet_group_name   = "default"
+  db_subnet_group_name   = "test"
 
   # DB Security group
   vpc_security_group_ids = [aws_security_group.db.id]
