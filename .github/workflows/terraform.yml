@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - master
+      - main
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
 defaults:
   run:
     shell: bash
@@ -41,8 +41,7 @@ jobs:
       - name: Terraform Apply
         if: github.ref == 'refs/heads/main'
         id: apply
-        run: |
-          terraform apply -auto-approve -input=false -var-file=${{ matrix.environment }}/terraform.tfvars
+        run: terraform apply -auto-approve -input=false -var-file=${{ matrix.environment }}/terraform.tfvars
       - name: Terraform destroy
         if: github.ref == 'refs/heads/destroy'
         id: destroy
