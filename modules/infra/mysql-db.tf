@@ -40,7 +40,7 @@ module "db" {
 }
 
 resource "aws_db_subnet_group" "db" {
-  subnet_ids = ["172.31.16.0/20", "172.31.0.0/20", "172.31.32.0/20"]
+  subnet_ids = ["subnet-0d808f444bb2174f3", "subnet-031ac19c8c68cd6e5", "subnet-0aff4fb0f3141b3c9"]
 
   tags = {
     Name = "Education"
