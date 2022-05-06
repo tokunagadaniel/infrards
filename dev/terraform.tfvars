@@ -1,2 +1,4 @@
 environment = "dev"
-project     = "infrards"
+db_name     = "test"
+db_user     = "test"
+db_pass     = "test"

@@ -1,19 +1,25 @@
-variable "environment" {
-  default     = ""
-  description = "Environment for deployment"
+variable "identifier" {
+  description = "The database identifier, here used as deploy environment."
+  type        = string
 }
 
-variable "project" {
-  default     = ""
-  description = "Project, aka the application name"
+variable "name" {
+  description = "The name of the database to create."
+  type        = string
 }
 
-variable "region" {
-  default     = ""
-  description = "AWS region for resources"
+variable "username" {
+  description = "The administrator username for the database."
+  type        = string
 }
 
-variable "platform_version" {
-  default     = "1.4.0"
-  description = "Platform version on which to run your service."
+variable "password" {
+  description = "The password for the administrator user of the database."
+  type        = string
+}
+
+variable "port" {
+  description = "The port for database service."
+  type        = number
+  default     = 3306
 }
