@@ -1,5 +1,5 @@
 module "db" {
-  source = "./modules/mysql-db"
+  source = "./modules/infra/mysql-db"
 
   identifier = var.environment
 
