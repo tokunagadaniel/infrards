@@ -41,8 +41,8 @@ module "db" {
 
 provider "mysql" {
   endpoint = db.endpoint
-  username = db.username
-  password = db.password
+  username = "app-user"
+  password = "app-password"
 }
 
 resource "mysql_database" "app" {
