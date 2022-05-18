@@ -39,6 +39,12 @@ module "db" {
   option_group_name      = "default:mysql-5-7"
 }
 
+provider "mysql" {
+  endpoint = db.endpoint
+  username = db.username
+  password = db.password
+}
+
 resource "mysql_database" "app" {
   name = "another_db"
 }
