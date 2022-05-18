@@ -39,6 +39,10 @@ module "db" {
   option_group_name      = "default:mysql-5-7"
 }
 
+resource "mysql_database" "app" {
+  name = "another_db"
+}
+
 resource "aws_db_subnet_group" "db" {
   subnet_ids = ["subnet-0d808f444bb2174f3", "subnet-031ac19c8c68cd6e5", "subnet-0aff4fb0f3141b3c9"]
 
