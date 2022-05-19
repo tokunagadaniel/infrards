@@ -45,7 +45,7 @@ provider "mysql" {
   password = module.db.this_db_instance_password
 }
 
-resource "mysql_database" "app" {
+resource "mysql_database" "this" {
   name = "another_db"
 }
 
