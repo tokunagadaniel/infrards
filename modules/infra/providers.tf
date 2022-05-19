@@ -4,9 +4,5 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 3.0"
     }
-	mysql = {
-	  source  = "winebarrel/mysql"
-      version = "~> 1.10.2"
-    }
   }
 }
