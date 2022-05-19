@@ -40,9 +40,9 @@ module "db" {
 }
 
 provider "mysql" {
-  endpoint = module.db.db_instance_endpoint
-  username = module.db.db_instance_username
-  password = module.db.db_instance_password
+  endpoint = module.db.this_db_instance_endpoint
+  username = module.db.this_db_instance_username
+  password = module.db.this_db_instance_password
 }
 
 resource "mysql_database" "app" {
