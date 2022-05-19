@@ -47,6 +47,8 @@ provider "mysql" {
 
 resource "mysql_database" "app" {
   name = "another_db"
+  
+  depends_on = [db]
 }
 
 resource "aws_db_subnet_group" "db" {
