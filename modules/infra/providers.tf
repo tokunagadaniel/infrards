@@ -6,7 +6,7 @@ terraform {
     }
 	mysql = {
       source  = "terraform-providers/mysql"
-      version = ">= 1.10.6"
+      version = ">= 1.10.2"
     }
   }
 }
