@@ -47,12 +47,6 @@ resource "aws_db_subnet_group" "db" {
   }
 }
 
-# Create a second database, in addition to the "initial_db" created
-# by the aws_db_instance resource above.
-resource "mysql_database" "app" {
-  name = "another_db"
-}
-
 resource "aws_security_group" "db" {
   name = "db-sg-${var.identifier}"
 }
