@@ -9,7 +9,7 @@ module "db" {
   identifier = var.identifier
 
   engine            = "mysql"
-  engine_version    = "5.6.17"
+  engine_version    = "5.7.19"
   instance_class    = "db.t2.micro"
   allocated_storage = 10
 
@@ -37,16 +37,6 @@ module "db" {
   # DB option group
   create_db_option_group = false
   option_group_name      = "default:mysql-5-7"
-}
-
-provider "mysql" {
-  endpoint = module.db.this_db_instance_endpoint
-  username = module.db.this_db_instance_username
-  password = module.db.this_db_instance_password
-}
-
-resource "mysql_database" "app" {
-  name = "another_db"
 }
 
 resource "aws_db_subnet_group" "db" {
