@@ -2,7 +2,7 @@ data "aws_vpc" "default" {
   default = true
 }
 
-module "db" {
+resource "aws_db_instance" "default" {
   source  = "terraform-aws-modules/rds/aws"
   version = "~> 2.0"
 
@@ -40,15 +40,15 @@ module "db" {
 }
 
 provider "mysql" {
-  endpoint = module.db.this_db_instance_endpoint
-  username = module.db.this_db_instance_username
-  password = module.db.this_db_instance_password
+  endpoint = "${aws_db_instance.default.endpoint}"
+  username = "${aws_db_instance.default.username}"
+  password = "${aws_db_instance.default.password}"
 }
 
+# Create a second database, in addition to the "initial_db" created
+# by the aws_db_instance resource above.
 resource "mysql_database" "app" {
   name = "another_db"
-  
-  depends_on = [db]
 }
 
 resource "aws_db_subnet_group" "db" {
