@@ -5,8 +5,8 @@ terraform {
       version = "~> 3.0"
     }
 	mysql = {
-      source  = "terraform-providers/mysql"
-      version = ">= 1.6"
+	  source  = "winebarrel/mysql"
+      version = "~> 1.10.2"
     }
   }
 }
