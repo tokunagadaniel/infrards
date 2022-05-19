@@ -9,7 +9,7 @@ module "db" {
   identifier = var.identifier
 
   engine            = "mysql"
-  engine_version    = "5.7.19"
+  engine_version    = "5.6.17"
   instance_class    = "db.t2.micro"
   allocated_storage = 10
 
@@ -32,11 +32,11 @@ module "db" {
 
   # DB parameter group
   create_db_parameter_group = false
-  parameter_group_name      = "default.mysql5.7"
+  parameter_group_name      = "default.mysql5."6
 
   # DB option group
   create_db_option_group = false
-  option_group_name      = "default:mysql-5-7"
+  option_group_name      = "default:mysql-5-6"
 }
 
 provider "mysql" {
