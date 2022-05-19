@@ -40,7 +40,7 @@ module "db" {
 }
 
 provider "mysql" {
-  endpoint = db.db_default_instance_endpoint
+  endpoint = db.db_instance_endpoint
   username = var.username
   password = var.password
 }
