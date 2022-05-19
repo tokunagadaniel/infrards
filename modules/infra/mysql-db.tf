@@ -9,7 +9,7 @@ module "db" {
   identifier = var.identifier
 
   engine            = "mysql"
-  engine_version    = "5.7.19"
+  engine_version    = "5.6.17"
   instance_class    = "db.t2.micro"
   allocated_storage = 10
 
@@ -45,7 +45,7 @@ provider "mysql" {
   password = module.db.this_db_instance_password
 }
 
-resource "mysql_database" "this" {
+resource "mysql_database" "app" {
   name = "another_db"
 }
 
