@@ -47,14 +47,6 @@ resource "aws_db_subnet_group" "db" {
   }
 }
 
-# Configure the MySQL provider based on the outcome of
-# creating the aws_db_instance.
-provider "mysql" {
-  endpoint = module.db.this_db_instance_endpoint
-  username = module.db.this_db_instance_username
-  password = module.db.this_db_instance_password
-}
-
 # Create a second database, in addition to the "initial_db" created
 # by the aws_db_instance resource above.
 resource "mysql_database" "app" {
