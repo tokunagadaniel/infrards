@@ -3,9 +3,6 @@ data "aws_vpc" "default" {
 }
 
 resource "aws_db_instance" "default" {
-  source  = "terraform-aws-modules/rds/aws"
-  version = "~> 2.0"
-
   identifier = var.identifier
 
   engine            = "mysql"
